@@ -1,0 +1,6 @@
+{
+  "name": "Dealership Performance Dashboard",
+  "description": "Real-time dealership sales performance dashboard with secure Ingress staff authentication, monitoring bookings, cancellations, conversion rates, and vehicle registrations.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

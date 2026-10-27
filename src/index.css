@@ -1,0 +1,658 @@
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;700&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-sans: 'Plus Jakarta Sans', ui-sans-serif, system-ui, sans-serif;
+  --font-mono: 'JetBrains Mono', ui-monospace, SFMono-Regular, monospace;
+
+  --color-slate-50: var(--c-slate-50);
+  --color-slate-100: var(--c-slate-100);
+  --color-slate-200: var(--c-slate-200);
+  --color-slate-300: var(--c-slate-300);
+  --color-slate-400: var(--c-slate-400);
+  --color-slate-500: var(--c-slate-500);
+  --color-slate-600: var(--c-slate-600);
+  --color-slate-700: var(--c-slate-700);
+  --color-slate-750: var(--c-slate-750);
+  --color-slate-800: var(--c-slate-800);
+  --color-slate-850: var(--c-slate-850);
+  --color-slate-900: var(--c-slate-900);
+  --color-slate-950: var(--c-slate-950);
+
+  --color-indigo-400: var(--c-indigo-400);
+  --color-indigo-300: var(--c-indigo-300);
+  --color-emerald-400: var(--c-emerald-400);
+  --color-emerald-300: var(--c-emerald-300);
+  --color-rose-400: var(--c-rose-400);
+  --color-rose-300: var(--c-rose-300);
+  --color-amber-400: var(--c-amber-400);
+  --color-amber-300: var(--c-amber-300);
+  --color-cyan-400: var(--c-cyan-400);
+  --color-cyan-300: var(--c-cyan-300);
+  --color-violet-400: var(--c-violet-400);
+  --color-violet-300: var(--c-violet-300);
+}
+
+/* Light mode (Default) */
+:root, .light {
+  color-scheme: light;
+  --chart-grid: #e2e8f0;
+  --chart-tracker: #94a3b8;
+  --chart-node-bg: #ffffff;
+  --circle-bg: #e2e8f0;
+  --scrollbar-thumb: #cbd5e1;
+  --scrollbar-thumb-hover: #94a3b8;
+
+  --c-slate-950: #f8fafc;
+  --c-slate-900: #ffffff;
+  --c-slate-850: #f1f5f9;
+  --c-slate-800: #e2e8f0;
+  --c-slate-750: #e2e8f0;
+  --c-slate-700: #cbd5e1;
+  --c-slate-600: #94a3b8;
+  --c-slate-500: #64748b;
+  --c-slate-400: #475569;
+  --c-slate-300: #334155;
+  --c-slate-200: #1e293b;
+  --c-slate-100: #0f172a;
+  --c-slate-50: #020617;
+
+  --c-indigo-400: #4f46e5;
+  --c-indigo-300: #4338ca;
+  --c-emerald-400: #059669;
+  --c-emerald-300: #047857;
+  --c-rose-400: #e11d48;
+  --c-rose-300: #be123c;
+  --c-amber-400: #d97706;
+  --c-amber-300: #b45309;
+  --c-cyan-400: #0891b2;
+  --c-cyan-300: #0e7490;
+  --c-violet-400: #7c3aed;
+  --c-violet-300: #6d28d9;
+}
+
+/* Dark mode */
+.dark {
+  color-scheme: dark;
+  --chart-grid: #1e293b;
+  --chart-tracker: #334155;
+  --chart-node-bg: #09090b;
+  --circle-bg: #1e293b;
+  --scrollbar-thumb: #262626;
+  --scrollbar-thumb-hover: #404040;
+
+  --c-slate-950: #020617;
+  --c-slate-900: #0f172a;
+  --c-slate-850: #141e33;
+  --c-slate-800: #1e293b;
+  --c-slate-750: #26334d;
+  --c-slate-700: #334155;
+  --c-slate-600: #475569;
+  --c-slate-500: #64748b;
+  --c-slate-400: #94a3b8;
+  --c-slate-300: #cbd5e1;
+  --c-slate-200: #e2e8f0;
+  --c-slate-100: #f8fafc;
+  --c-slate-50: #ffffff;
+
+  --c-indigo-400: #818cf8;
+  --c-indigo-300: #a5b4fc;
+  --c-emerald-400: #34d399;
+  --c-emerald-300: #6ee7b7;
+  --c-rose-400: #fb7185;
+  --c-rose-300: #fda4af;
+  --c-amber-400: #fbbf24;
+  --c-amber-300: #fcd34d;
+  --c-cyan-400: #22d3ee;
+  --c-cyan-300: #67e8f9;
+  --c-violet-400: #a78bfa;
+  --c-violet-300: #c4b5fd;
+}
+
+/* Card polish & shadow enhancements for Light Mode */
+.light [id$="-panel"],
+.light [id$="-container"],
+.light [id$="-widget"],
+.light [id$="-summary"],
+.light [id$="-analysis"],
+.light [id$="-card"],
+.light [id$="-bar"],
+.light [id^="metric-card-"] {
+  background-color: #ffffff !important;
+  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.04), 0 4px 14px -2px rgba(0, 0, 0, 0.03) !important;
+  border-color: #e2e8f0 !important;
+  color: #0f172a !important;
+}
+
+/* Sales Advisor Coverage section Light Theme enhancements */
+.light #sales-advisor-coverage-panel,
+.light #guide-sales-advisor-coverage {
+  background-color: #ffffff !important;
+  background: #ffffff !important;
+  border-color: #e2e8f0 !important;
+  color: #0f172a !important;
+  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.04), 0 4px 14px -2px rgba(0, 0, 0, 0.03) !important;
+}
+
+.light #sales-advisor-coverage-panel .coverage-kpi-card {
+  background-color: #f8fafc !important;
+  background: #f8fafc !important;
+  border-color: #e2e8f0 !important;
+  box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.04) !important;
+}
+
+.light #sales-advisor-coverage-panel .coverage-search-bar {
+  background-color: #f8fafc !important;
+  background: #f8fafc !important;
+  border-color: #e2e8f0 !important;
+}
+
+.light #sales-advisor-coverage-panel .coverage-advisor-card {
+  background-color: #ffffff !important;
+  background: #ffffff !important;
+  border-color: #e2e8f0 !important;
+  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.04) !important;
+}
+
+.light #sales-advisor-coverage-panel .coverage-advisor-card:hover {
+  border-color: #f59e0b !important;
+  box-shadow: 0 4px 14px 0 rgba(245, 158, 11, 0.12) !important;
+}
+
+.light #sales-advisor-coverage-panel .coverage-inner-box {
+  background-color: #f8fafc !important;
+  background: #f8fafc !important;
+  border-color: #e2e8f0 !important;
+}
+
+.light #sales-advisor-coverage-panel .coverage-badge {
+  background-color: #f1f5f9 !important;
+  background: #f1f5f9 !important;
+  border-color: #e2e8f0 !important;
+  color: #0f172a !important;
+}
+
+.light #sales-advisor-coverage-panel .coverage-action-btn {
+  background-color: #f1f5f9 !important;
+  background: #f1f5f9 !important;
+  border-color: #e2e8f0 !important;
+  color: #0f172a !important;
+}
+
+.light #sales-advisor-coverage-panel .coverage-action-btn:hover {
+  background-color: #fef3c7 !important;
+  border-color: #fde68a !important;
+  color: #92400e !important;
+}
+
+.light #sales-advisor-coverage-panel table thead {
+  background-color: #f1f5f9 !important;
+  border-color: #e2e8f0 !important;
+  color: #1e293b !important;
+}
+
+.light #sales-advisor-coverage-panel table tbody tr:hover {
+  background-color: #f8fafc !important;
+}
+
+.light .coverage-modal-card {
+  background-color: #ffffff !important;
+  border-color: #e2e8f0 !important;
+  color: #0f172a !important;
+}
+
+.light .coverage-modal-header,
+.light .coverage-modal-footer {
+  background-color: #f8fafc !important;
+  background: #f8fafc !important;
+  border-color: #e2e8f0 !important;
+  color: #0f172a !important;
+}
+
+.light .coverage-modal-card .bg-slate-100,
+.light .coverage-modal-card .bg-slate-200,
+.light .coverage-modal-card [class*="bg-slate-100"],
+.light .coverage-modal-card [class*="bg-slate-200"],
+.light .coverage-modal-card [class*="bg-slate-950"],
+.light .coverage-modal-card [class*="bg-slate-900"] {
+  background-color: #f8fafc !important;
+  border-color: #e2e8f0 !important;
+  color: #0f172a !important;
+}
+
+.light .coverage-modal-card .bg-white {
+  background-color: #ffffff !important;
+}
+
+.light .coverage-modal-card [class*="text-slate-100"],
+.light .coverage-modal-card [class*="text-slate-200"] {
+  color: #0f172a !important;
+}
+
+.light .coverage-modal-card [class*="text-slate-400"],
+.light .coverage-modal-card [class*="text-slate-500"],
+.light .coverage-modal-card [class*="text-slate-600"] {
+  color: #475569 !important;
+}
+
+.light #sales-advisor-coverage-panel .coverage-progress-track {
+  background-color: #e2e8f0 !important;
+}
+
+.light #sales-advisor-coverage-panel [class*="bg-blue-50"] {
+  background-color: #eff6ff !important;
+  border-color: #bfdbfe !important;
+  color: #1e3a8a !important;
+}
+
+.light #sales-advisor-coverage-panel [class*="bg-indigo-50"],
+.light .coverage-modal-card [class*="bg-indigo-50"] {
+  background-color: #eef2ff !important;
+  border-color: #c7d2fe !important;
+  color: #312e81 !important;
+}
+
+.light #sales-advisor-coverage-panel .coverage-toggle-active {
+  background-color: #e2e8f0 !important;
+  color: #0f172a !important;
+}
+
+/* Ensure font color is solid dark/black and sentences stand out clearly for Auto Guide and Handbook */
+.auto-guide-card,
+.auto-guide-card h1, .auto-guide-card h2, .auto-guide-card h3, .auto-guide-card h4,
+.auto-guide-card p, .auto-guide-card span:not([class*="bg-emerald"]):not([class*="text-[#8f043b]"]):not([class*="text-rose"]):not([class*="text-amber"]):not([class*="text-emerald"]),
+.auto-guide-card button, .auto-guide-card div:not([class*="bg-[#8f043b]"]):not([class*="bg-emerald"]):not([class*="bg-amber"]),
+.auto-guide-card code, .auto-guide-card strong, .auto-guide-card b,
+.dashboard-handbook,
+.dashboard-handbook h1, .dashboard-handbook h2, .dashboard-handbook h3, .dashboard-handbook h4, .dashboard-handbook h5,
+.dashboard-handbook p, .dashboard-handbook td, .dashboard-handbook th,
+.dashboard-handbook li, .dashboard-handbook ul, .dashboard-handbook ol,
+.dashboard-handbook code, .dashboard-handbook pre,
+.dashboard-handbook strong, .dashboard-handbook b, .dashboard-handbook input,
+.dashboard-handbook button,
+.dashboard-handbook div:not([class*="bg-[#8f043b]"]):not([class*="bg-emerald"]):not([class*="bg-amber"]):not([class*="bg-rose"]):not([class*="bg-cyan"]):not([class*="bg-indigo"]):not([class*="bg-violet"]),
+.dashboard-handbook span:not([class*="text-emerald"]):not([class*="text-rose"]):not([class*="text-amber"]):not([class*="text-cyan"]):not([class*="text-[#8f043b]"]):not([class*="text-indigo"]):not([class*="text-violet"]) {
+  color: #000000 !important;
+}
+
+/* Ensure sentences and paragraphs stand out clearly with high-contrast bold dark typography */
+.auto-guide-card p,
+.dashboard-handbook p {
+  color: #000000 !important;
+  font-weight: 550 !important;
+  text-rendering: optimizeLegibility;
+}
+
+.dashboard-handbook li {
+  color: #000000 !important;
+  font-weight: 550 !important;
+}
+
+.dashboard-handbook code {
+  color: #000000 !important;
+  font-weight: 700 !important;
+}
+
+.auto-guide-card button {
+  background-color: #ffffff !important;
+  color: #000000 !important;
+}
+.auto-guide-card button:hover {
+  background-color: #f8fafc !important;
+}
+
+/* Ensure all boxes, callouts, and code containers in Auto Guide and Dashboard Handbook have light backgrounds */
+.auto-guide-card .bg-slate-50,
+.auto-guide-card .bg-slate-100,
+.auto-guide-card [class*="bg-slate-50"],
+.auto-guide-card [class*="bg-slate-100"],
+.dashboard-handbook .bg-slate-50,
+.dashboard-handbook .bg-slate-100,
+.dashboard-handbook .bg-slate-200,
+.dashboard-handbook [class*="bg-slate-50"],
+.dashboard-handbook [class*="bg-slate-100"],
+.dashboard-handbook div[class*="bg-slate-"] {
+  background-color: #f8fafc !important;
+  border-color: #e2e8f0 !important;
+}
+
+/* Corporate Top Banner: Signature Ingress corporate branding in both Light & Dark modes */
+header.corporate-top-banner,
+.light header.corporate-top-banner {
+  color: #ffffff !important;
+  background-color: #161217 !important;
+  border-bottom-color: #2b232c !important;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.4) !important;
+}
+
+header.corporate-top-banner .datetime-widget,
+.light header.corporate-top-banner .datetime-widget {
+  background-color: #241c28 !important;
+  border: 1px solid #4d3d52 !important;
+  box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.3) !important;
+}
+
+header.corporate-top-banner .datetime-date,
+.light header.corporate-top-banner .datetime-date {
+  color: #f8fafc !important;
+  font-weight: 600 !important;
+}
+
+header.corporate-top-banner .datetime-time,
+.light header.corporate-top-banner .datetime-time {
+  color: #ffffff !important;
+  font-weight: 700 !important;
+}
+
+header.corporate-top-banner .datetime-divider,
+.light header.corporate-top-banner .datetime-divider {
+  color: #94a3b8 !important;
+}
+
+header.corporate-top-banner .datetime-myt,
+.light header.corporate-top-banner .datetime-myt {
+  color: #a5b4fc !important;
+  font-weight: 700 !important;
+}
+
+header.corporate-top-banner .datetime-live-badge,
+.light header.corporate-top-banner .datetime-live-badge {
+  color: #34d399 !important;
+  background-color: rgba(16, 185, 129, 0.22) !important;
+  border: 1px solid rgba(52, 211, 153, 0.5) !important;
+  font-weight: 700 !important;
+}
+
+header.corporate-top-banner .banner-sim-btn,
+.light header.corporate-top-banner .banner-sim-btn {
+  color: #a5b4fc !important;
+  background-color: #241c28 !important;
+  border: 1px solid #4d3d52 !important;
+}
+
+header.corporate-top-banner .banner-subtext,
+.light header.corporate-top-banner .banner-subtext {
+  color: #cbd5e1 !important;
+}
+
+.light footer {
+  background-color: rgba(255, 255, 255, 0.9) !important;
+  border-top-color: #e2e8f0 !important;
+}
+
+/* Light mode for nested cards / sub-boxes */
+.light .bg-slate-950\/80,
+.light .bg-slate-950\/75,
+.light .bg-slate-950\/70,
+.light .bg-slate-950\/60,
+.light .bg-slate-950\/50,
+.light .bg-slate-950\/40,
+.light .bg-slate-950\/30,
+.light .bg-slate-950\/25,
+.light .bg-slate-950\/20,
+.light .bg-slate-950 {
+  background-color: #f8fafc !important;
+  border-color: #e2e8f0 !important;
+  color: #1e293b !important;
+}
+
+.light .bg-slate-900\/90,
+.light .bg-slate-900\/80,
+.light .bg-slate-900\/50,
+.light .bg-slate-900 {
+  background-color: #ffffff !important;
+  border-color: #e2e8f0 !important;
+  color: #0f172a !important;
+}
+
+.light .bg-slate-850\/80,
+.light .bg-slate-850 {
+  background-color: #f1f5f9 !important;
+  border-color: #e2e8f0 !important;
+}
+
+.light .border-slate-800,
+.light .border-slate-800\/80,
+.light .border-slate-800\/70,
+.light .border-slate-800\/60,
+.light .border-slate-800\/50,
+.light .border-slate-850,
+.light .border-slate-900\/60 {
+  border-color: #e2e8f0 !important;
+}
+
+/* Form Controls: Inputs and Selects */
+.light select,
+.light input {
+  background-color: #ffffff !important;
+  color: #0f172a !important;
+  border-color: #cbd5e1 !important;
+}
+
+.light select option {
+  background-color: #ffffff !important;
+  color: #0f172a !important;
+}
+
+/* Pill badges with high-contrast text and soft tints in Light Mode */
+/* CYAN (e.g. Current Month Badge) */
+.light .bg-cyan-950\/80,
+.light .bg-cyan-950\/50,
+.light .bg-cyan-950 {
+  background-color: #e0f2fe !important;
+  border-color: #7dd3fc !important;
+  color: #0369a1 !important;
+}
+
+.light .bg-indigo-950\/80,
+.light .bg-indigo-950\/40,
+.light .bg-indigo-950\/25,
+.light .bg-indigo-950 {
+  background-color: #eef2ff !important;
+  border-color: #c7d2fe !important;
+  color: #4338ca !important;
+}
+
+.light .bg-emerald-950\/80,
+.light .bg-emerald-950\/40,
+.light .bg-emerald-950\/20,
+.light .bg-emerald-950 {
+  background-color: #ecfdf5 !important;
+  border-color: #a7f3d0 !important;
+  color: #047857 !important;
+}
+
+.light .bg-amber-950\/80,
+.light .bg-amber-950\/40,
+.light .bg-amber-950\/20,
+.light .bg-amber-950 {
+  background-color: #fffbeb !important;
+  border-color: #fde68a !important;
+  color: #b45309 !important;
+}
+
+.light .bg-rose-950\/80,
+.light .bg-rose-950\/40,
+.light .bg-rose-950\/30,
+.light .bg-rose-950\/20,
+.light .bg-rose-950\/10,
+.light .bg-rose-950 {
+  background-color: #fff1f2 !important;
+  border-color: #fecdd3 !important;
+  color: #be123c !important;
+}
+
+/* Tooltips in Light Mode */
+.light .bg-slate-950\/95 {
+  background-color: #ffffff !important;
+  border-color: #e2e8f0 !important;
+  box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1), 0 8px 10px -6px rgba(0, 0, 0, 0.06) !important;
+  color: #0f172a !important;
+}
+
+/* Background ambient glow in Light Mode */
+.light .bg-indigo-950\/10,
+.light .bg-violet-950\/10 {
+  display: none !important;
+}
+
+/* Phone Mockup Frame in Light Mode */
+.light .border-slate-800.rounded-\[55px\] {
+  border-color: #cbd5e1 !important;
+  background-color: #f8fafc !important;
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.12) !important;
+}
+
+/* Highlighting the Higher Dealership card in light mode */
+.light .bg-gradient-to-b.from-amber-500\/\[0\.08\].to-slate-950\/90 {
+  background: linear-gradient(to bottom, rgba(245, 158, 11, 0.06), #ffffff) !important;
+  border-color: #f59e0b !important;
+  box-shadow: 0 4px 16px rgba(245, 158, 11, 0.1) !important;
+}
+
+/* High-contrast text enhancements for maximum legibility in Light Mode */
+.light .text-slate-950 {
+  color: #000000 !important;
+}
+
+.light .text-slate-900 {
+  color: #090d16 !important;
+}
+
+.light .text-slate-850 {
+  color: #0f172a !important;
+}
+
+.light .text-slate-800 {
+  color: #1e293b !important;
+}
+
+.light .text-slate-750 {
+  color: #1e293b !important;
+}
+
+.light .text-slate-700 {
+  color: #1e293b !important;
+  font-weight: 500 !important;
+}
+
+.light .text-slate-600 {
+  color: #334155 !important;
+  font-weight: 500 !important;
+}
+
+.light .text-slate-500 {
+  color: #334155 !important;
+}
+
+.light .text-slate-400 {
+  color: #1e293b !important;
+}
+
+.light .text-slate-300 {
+  color: #0f172a !important;
+}
+
+.light .text-slate-200 {
+  color: #020617 !important;
+}
+
+.light .text-slate-100 {
+  color: #000000 !important;
+}
+
+.light .text-slate-50 {
+  color: #000000 !important;
+}
+
+/* Ensure sentences stand out clearly with dark font colors on light backgrounds */
+.light p,
+.light article p,
+.light section p,
+.light li {
+  color: #0f172a !important;
+  font-weight: 550 !important;
+  text-rendering: optimizeLegibility;
+}
+
+.light p strong,
+.light p b,
+.light li strong,
+.light li b {
+  color: #000000 !important;
+  font-weight: 800 !important;
+}
+
+/* High-contrast text enhancements for maximum legibility in Dark Mode */
+.dark .text-slate-500,
+:root:not(.light) .text-slate-500 {
+  color: #a1a1aa !important;
+}
+
+.dark .text-slate-400,
+:root:not(.light) .text-slate-400 {
+  color: #cbd5e1 !important;
+}
+
+.dark .text-slate-300,
+:root:not(.light) .text-slate-300 {
+  color: #e2e8f0 !important;
+}
+
+.dark .text-slate-200,
+:root:not(.light) .text-slate-200 {
+  color: #f8fafc !important;
+}
+
+.dark .text-slate-100,
+:root:not(.light) .text-slate-100 {
+  color: #ffffff !important;
+}
+
+header.corporate-top-banner .text-slate-400,
+.light header.corporate-top-banner .text-slate-400 {
+  color: #cbd5e1 !important;
+}
+
+header.corporate-top-banner .text-slate-300,
+.light header.corporate-top-banner .text-slate-300 {
+  color: #e2e8f0 !important;
+}
+
+header.corporate-top-banner .text-slate-200,
+.light header.corporate-top-banner .text-slate-200 {
+  color: #f1f5f9 !important;
+}
+
+header.corporate-top-banner .text-slate-100,
+.light header.corporate-top-banner .text-slate-100 {
+  color: #ffffff !important;
+}
+
+/* Hover row states */
+.light .hover\:bg-slate-900:hover,
+.light .hover\:bg-slate-950\/90:hover,
+.light .hover\:bg-slate-950\/80:hover,
+.light .hover\:bg-slate-950\/70:hover,
+.light .hover\:bg-slate-800\/30:hover {
+  background-color: #f1f5f9 !important;
+}
+
+/* Responsive custom scrollbar */
+.scrollbar-thin::-webkit-scrollbar {
+  width: 5px;
+  height: 5px;
+}
+
+.scrollbar-thin::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.scrollbar-thin::-webkit-scrollbar-thumb {
+  background: var(--scrollbar-thumb, #cbd5e1);
+  border-radius: 9999px;
+}
+
+.scrollbar-thin::-webkit-scrollbar-thumb:hover {
+  background: var(--scrollbar-thumb-hover, #94a3b8);
+}
